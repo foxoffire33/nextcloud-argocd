@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nextcloud-postgresql
+  namespace: nextcloud
+spec:
+  values:
+    global:
+      postgresql:
+        password: devpassword123
+    persistence:
+      size: 5Gi
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nextcloud
+  namespace: nextcloud
+spec:
+  values:
+    persistence:
+      size: 10Gi
