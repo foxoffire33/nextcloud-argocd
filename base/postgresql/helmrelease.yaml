@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: nextcloud-postgresql
-  namespace: nextcloud
+  namespace: delaparra-cloud
 spec:
   chart:
     spec:
@@ -17,9 +17,9 @@ spec:
       postgresql:
         auth:
           postgresPassword: asdasd
-          username: nextcloud
+          username: cloud
           password: asdasd
-          database: asdasd
+          database: cloud
     persistence:
       enabled: true
       size: 10Gi

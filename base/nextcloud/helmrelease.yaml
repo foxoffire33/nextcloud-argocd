@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: nextcloud
-  namespace: nextcloud
+  namespace: delaparra-cloud
 spec:
   chart:
     spec:
@@ -18,8 +18,8 @@ spec:
       size: 20Gi
     externalDatabase:
       host: nextcloud-postgresql.nextcloud.svc.cluster.local
-      user: nextcloud
+      user: cloud
       password: asdasd
-      database: nextcloud
+      database: cloud
     service:
       type: ClusterIP
