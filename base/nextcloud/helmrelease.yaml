@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nextcloud
+  namespace: delaparra-cloud
+spec:
+  releaseName: nextcloud
+  chart:
+    spec:
+      chart: nextcloud
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+      version: 25.0.0
+  values:
+    externalDatabase:
+      host: postgresql.nextcloud.svc.cluster.local
+      user: reinier
+      password: asdasd
+      database: delaparra-cloud
+    persistence:
+      enabled: true
+      size: 50Gi
