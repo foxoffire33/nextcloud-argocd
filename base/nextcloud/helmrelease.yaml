@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nextcloud
+  namespace: nextcloud
+spec:
+  chart:
+    spec:
+      chart: nextcloud
+      sourceRef:
+        kind: HelmRepository
+        name: nextcloud
+        namespace: flux-system
+      version: 6.0.0
+  values:
+    persistence:
+      enabled: true
+      size: 20Gi
+    externalDatabase:
+      host: nextcloud-postgresql.nextcloud.svc.cluster.local
+      user: nextcloud
+      password: asdasd
+      database: nextcloud
+    service:
+      type: ClusterIP
