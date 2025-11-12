@@ -1,5 +1,5 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
 resources:
   - namespace.yaml
   - ./postgresql/helmrelease.yaml
