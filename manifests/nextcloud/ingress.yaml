@@ -3,10 +3,17 @@ kind: Ingress
 metadata:
   name: nextcloud-ingress
   namespace: delaparra-cloud
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - next.delaparra.local
+      secretName: nextcloud-tls
   rules:
-    - host: next.delaparra.local
+    - host: delaparra.local
       http:
         paths:
           - path: /
