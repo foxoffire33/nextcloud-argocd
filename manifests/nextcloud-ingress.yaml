@@ -2,9 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nextcloud-ingress
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
+  namespace: delaparra-cloud
 spec:
+  ingressClassName: nginx
   rules:
     - host: next.delaparra.local
       http:
