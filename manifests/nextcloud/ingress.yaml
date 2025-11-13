@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - next.delaparra.local
+        - next.delaparra.xyz
       secretName: nextcloud-tls
   rules:
-    - host: delaparra.local
+    - host: delaparra.xyz
       http:
         paths:
           - path: /
