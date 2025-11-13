@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://github.com/<your-org>/<your-repo>.git"  # Replace with your actual repository
+    repoURL: "https://github.com/foxoffire33/nextcloud-argocd"
     targetRevision: HEAD
-    path: "manifests"
+    path: "manifests"   # <-- relative path, no leading slash
   destination:
     server: "https://kubernetes.default.svc"
     namespace: delaparra-cloud
