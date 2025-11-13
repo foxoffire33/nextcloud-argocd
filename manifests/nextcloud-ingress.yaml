@@ -16,10 +16,3 @@ spec:
                 name: nextcloud-service
                 port:
                   number: 80
-
-
-                  kubectl create deployment demo --image=httpd --port=80
-                  kubectl expose deployment demo
-                  kubectl create ingress demo-localhost --class=nginx --rule="delaparra.local/*=demo:80"
-                  kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80
-                  curl --resolve delaparra.local:8080:127.0.0.1 http://delaparra.local:8080
