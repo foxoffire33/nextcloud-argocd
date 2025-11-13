@@ -13,7 +13,7 @@ spec:
         - next.delaparra.local
       secretName: nextcloud-local
   rules:
-    - host: next.delaparra.xyz
+    - host: next.delaparra.local
       http:
         paths:
           - path: /
