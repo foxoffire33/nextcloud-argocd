@@ -6,3 +6,6 @@ resources:
   - postgres-deployment.yaml
   - postgres-service.yaml
   - pvc-postgres.yaml
+  - nextcloud-deployment.yaml
+  - nextcloud-service.yaml
+  - pvc-nextcloud.yaml
